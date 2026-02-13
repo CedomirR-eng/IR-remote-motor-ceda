@@ -1,0 +1,39 @@
+#include <IRremote.hpp>    
+
+#define POT_PIN A0
+#define IR_TX_PIN 6
+#define BUTTON1_PIN 10
+#define BUTTON2_PIN 8
+
+void setup() {
+  Serial.begin(9600);
+  IrSender.begin(IR_TX_PIN);
+  pinMode(BUTTON1_PIN, INPUT_PULLUP);
+  pinMode(BUTTON2_PIN, INPUT_PULLUP);
+  Serial.println("TX Ready - Fixed Samsung");
+}
+
+void loop() {
+  int potValue = analogRead(POT_PIN);
+  int brightness = map(potValue, 0, 1023, 0, 255);
+  
+  bool button1 = (digitalRead(BUTTON1_PIN) == LOW);
+  bool button2 = (digitalRead(BUTTON2_PIN) == LOW);
+  
+  // Samsung needs 3 parameters: address, command, repeats
+  IrSender.sendSamsung(0x707, brightness, 0);
+  delay(40);
+  IrSender.sendSamsung(0x708, button1 ? 100 : 0, 0);
+  delay(40);
+  IrSender.sendSamsung(0x709, button2 ? 100 : 0, 0);
+  delay(40);
+  
+  Serial.print("Brightness: ");
+  Serial.print(brightness);
+  Serial.print(" | Buttons: ");
+  Serial.print(button1);
+  Serial.print(",");
+  Serial.println(button2);
+  
+  delay(100);
+}
