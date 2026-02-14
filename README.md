@@ -32,7 +32,8 @@ The receiver decodes the signal and controls the motor accordingly.
 The tx send constantly ir signals, but when no button is pressed, the signal is off; off. But when B1 is pressed-signal is on; off(you get the idea)
 And the POT controls the PWM on the RX output pins.
 So when tx button 1 is pressed-rx pin9 is on. And when button 2 is pressed-rx pin5 is on.
-The tx send constantly beacuse it sets the PWM, and the buttons give instructions to turn on the pins
+The tx send constantly beacuse it sets the PWM, and the buttons give instructions to turn on the pins.
+Also i put a led on rx pin2 to blink when the motor is active. 
 
 Created as part of Hack Club Blueprint.
 
@@ -43,5 +44,6 @@ https://github.com/user-attachments/assets/7f66e379-3ef2-4de0-b5f1-2564e668604d
 https://github.com/user-attachments/assets/f0c71a79-ffcb-4000-9000-4d54b1c272e9
 
 sorry for the bad videos, i had to trim them
+
 
 
