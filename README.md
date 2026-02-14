@@ -38,6 +38,4 @@ Created as part of Hack Club Blueprint.
 
 videos:
 
-[tx video.html](https://github.com/user-attachments/files/25313655/tx.video.html)
 
-[rx video.html](https://github.com/user-attachments/files/25313660/rx.video.html)
