@@ -37,3 +37,5 @@ The tx send constantly beacuse it sets the PWM, and the buttons give instruction
 Created as part of Hack Club Blueprint.
 
 videos:
+
+[tx video.html](https://github.com/user-attachments/files/25313655/tx.video.html)
